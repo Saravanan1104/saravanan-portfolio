@@ -1,0 +1,1033 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saravanan P - Electrical and Electronics Engineering student, portfolio, projects, skills and internships.">
+    <title>Saravanan P | Portfolio</title>
+
+    <style>
+        /* ---------- GLOBAL ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #08111f;
+            --surface: #101d30;
+            --surface2: #14243a;
+            --text: #e8f0ff;
+            --muted: #9aacc7;
+            --accent: #39d5ff;
+            --accent2: #79f0d5;
+            --border: rgba(120, 180, 230, 0.15);
+        }
+
+        body.light {
+            --bg: #f3f7fc;
+            --surface: #ffffff;
+            --surface2: #eaf1f8;
+            --text: #172b42;
+            --muted: #5b7088;
+            --accent: #007fa8;
+            --accent2: #009c82;
+            --border: rgba(40, 80, 120, 0.15);
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            margin-bottom: 38px;
+        }
+
+        .accent {
+            color: var(--accent);
+        }
+
+        /* ---------- NAVBAR ---------- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        .navbar {
+            min-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .theme-btn, .menu-btn {
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            padding: 9px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+        /* ---------- BUTTONS ---------- */
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+            transition: transform 0.25s, background 0.25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #06121c;
+        }
+
+        .btn-outline {
+            color: var(--accent);
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            right: -100px;
+            top: 80px;
+            background: var(--accent);
+            opacity: 0.08;
+            filter: blur(100px);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 780px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 50px;
+            color: var(--accent2);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 76px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 4vw, 30px);
+            color: var(--muted);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 650px;
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .hero-info {
+            margin-top: 35px;
+            color: var(--muted);
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* ---------- ABOUT ---------- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+        }
+
+        .card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            border-radius: 18px;
+            transition: transform 0.3s, border 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card p {
+            color: var(--muted);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat {
+            padding: 22px;
+            border-radius: 15px;
+            background: var(--surface2);
+        }
+
+        .stat h3 {
+            font-size: 30px;
+            color: var(--accent);
+        }
+
+        .stat p {
+            font-size: 13px;
+        }
+
+        /* ---------- SKILLS ---------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            padding: 7px 13px;
+            border-radius: 8px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ---------- PROJECT ---------- */
+        .project-card {
+            overflow: hidden;
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            background: var(--surface2);
+            font-size: 28px;
+        }
+
+        .project-status {
+            font-size: 12px;
+            color: var(--accent2);
+            background: rgba(40, 200, 150, 0.1);
+            border: 1px solid rgba(40, 200, 150, 0.2);
+            border-radius: 30px;
+            padding: 6px 12px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            margin-bottom: 18px;
+        }
+
+        .project-points {
+            color: var(--muted);
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-points li {
+            margin-bottom: 7px;
+        }
+
+        /* ---------- EXPERIENCE ---------- */
+        .timeline {
+            position: relative;
+            margin-left: 10px;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 35px 30px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            left: -7px;
+            top: 8px;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p, .timeline-item li {
+            color: var(--muted);
+        }
+
+        .timeline-item ul {
+            padding-left: 20px;
+        }
+
+        /* ---------- EDUCATION ---------- */
+        .education-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .education-card .date {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .education-card p {
+            margin-top: 10px;
+        }
+
+        /* ---------- CERTIFICATIONS ---------- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .cert-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .cert-icon {
+            font-size: 23px;
+        }
+
+        .cert-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ---------- ACHIEVEMENTS ---------- */
+        .achievement-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .achievement {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .achievement-icon {
+            font-size: 22px;
+        }
+
+        /* ---------- CONTACT ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-link {
+            display: block;
+            padding: 18px;
+            margin-bottom: 12px;
+            background: var(--surface2);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent);
+        }
+
+        .contact-link span {
+            display: block;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .contact-link strong {
+            color: var(--accent);
+            overflow-wrap: anywhere;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* ---------- ANIMATION ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 850px) {
+            .menu-btn {
+                display: inline-block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                padding: 25px 5%;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            section {
+                padding: 65px 0;
+            }
+
+            .skills-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 78vh;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="logo">Saravanan<span>.</span></a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀</button>
+                <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="hero-tag">⚡ EEE Student | Aspiring Engineer</div>
+
+                <h1>Hello, I'm<br><span class="accent">Saravanan P.</span></h1>
+
+                <h2>Electrical & Electronics Engineering Student</h2>
+
+                <p>
+                    Passionate about electrical systems, embedded technologies,
+                    IoT, and innovative engineering solutions. I enjoy learning
+                    new technologies and turning ideas into practical projects.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#project" class="btn btn-primary">Explore My Projects ↗</a>
+
+                    <a href="assets/Saravanan-P-Resume.pdf"
+                       class="btn btn-outline" download>
+                       Download Resume ↓
+                    </a>
+                </div>
+
+                <div class="hero-info">
+                    <span>📍 Kanchipuram, India</span>
+                    <span>🎓 CGPA: 9.1 / 10</span>
+                    <span>✉ Available for opportunities</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title reveal">About <span class="accent">Me</span></h2>
+            <p class="section-subtitle reveal">A little about my background and goals</p>
+
+            <div class="about-grid">
+                <div class="card reveal">
+                    <h3 style="margin-bottom:15px;">Career Objective</h3>
+                    <p>
+                        Aspiring Electrical and Electronics Engineering student
+                        with a strong academic background and hands-on experience
+                        in industrial training, IoT, and embedded systems.
+                        Seeking an opportunity to apply my technical and
+                        problem-solving skills to develop innovative solutions
+                        while contributing to organizational growth and
+                        continuously enhancing my professional expertise.
+                    </p>
+                    <br>
+                    <p>
+                        I am interested in exploring technology, industrial
+                        automation, electrical systems, and engineering solutions
+                        that solve real-world problems.
+                    </p>
+                </div>
+
+                <div class="stats reveal">
+                    <div class="stat">
+                        <h3>9.1</h3>
+                        <p>CGPA / 10</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>2</h3>
+                        <p>Industrial Internships</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>4</h3>
+                        <p>Certifications</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>EEE</h3>
+                        <p>Engineering Discipline</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">Technical <span class="accent">Skills</span></h2>
+            <p class="section-subtitle reveal">Tools and technologies I have learned</p>
+
+            <div class="skills-grid">
+                <div class="card skill-card reveal">
+                    <h3>💻 Programming</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+
+                <div class="card skill-card reveal">
+                    <h3>⚙️ Technical Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">PCB Design</span>
+                    </div>
+                </div>
+
+                <div class="card skill-card reveal">
+                    <h3>📊 Productivity</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MS Word</span>
+                        <span class="skill-tag">MS Excel</span>
+                        <span class="skill-tag">PowerPoint</span>
+                    </div>
+                </div>
+
+                <div class="card skill-card reveal">
+                    <h3>🔌 Electrical</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Power Systems</span>
+                        <span class="skill-tag">Substations</span>
+                        <span class="skill-tag">Transformers</span>
+                    </div>
+                </div>
+
+                <div class="card skill-card reveal">
+                    <h3>📡 Emerging Technology</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">IoT</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">Sensors</span>
+                    </div>
+                </div>
+
+                <div class="card skill-card reveal">
+                    <h3>🏭 Industrial</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Relay Logic</span>
+                        <span class="skill-tag">Automation</span>
+                        <span class="skill-tag">Wiring & Cabling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT -->
+    <section id="project">
+        <div class="container">
+            <h2 class="section-title reveal">Featured <span class="accent">Project</span></h2>
+            <p class="section-subtitle reveal">Engineering ideas developed to solve real problems</p>
+
+            <div class="card project-card reveal">
+                <div class="project-top">
+                    <div class="project-icon">🌊</div>
+                    <span class="project-status">Ongoing Project</span>
+                </div>
+
+                <h3>Autonomous Floating Sensors for River Level Monitoring</h3>
+
+                <p>
+                    An autonomous floating sensor system designed to monitor
+                    river water levels in real time and support early flood
+            alerting through sensor measurements and wireless communication.
+                </p>
+
+                <ul class="project-points">
+                    <li>Developing a floating river water level monitoring system.</li>
+                    <li>Integrating hybrid water level sensors with a low-power microcontroller.</li>
+                    <li>Using GSM/GPRS communication for live data transmission.</li>
+                    <li>Designed to support automated flood alerts.</li>
+                </ul>
+
+                <div class="skill-list">
+                    <span class="skill-tag">IoT</span>
+                    <span class="skill-tag">Sensors</span>
+                    <span class="skill-tag">Embedded Systems</span>
+                    <span class="skill-tag">Microcontroller</span>
+                    <span class="skill-tag">GSM / GPRS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERNSHIPS -->
+    <section id="internships">
+        <div class="container">
+            <h2 class="section-title reveal">Industrial <span class="accent">Experience</span></h2>
+            <p class="section-subtitle reveal">My industry exposure and hands-on learning</p>
+
+            <div class="timeline">
+
+                <div class="timeline-item reveal">
+                    <h3>Dow Chemicals International Pvt. Ltd.</h3>
+                    <div class="timeline-date">June 2024 · Sriperumbudur, Tamil Nadu</div>
+                    <ul>
+                        <li>Gained foundational knowledge of industrial power systems and substation operations.</li>
+                        <li>Observed transformer functionalities, load management, and efficiency practices.</li>
+                        <li>Learned distribution processes and industrial electrical safety protocols.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <h3>Hyundai Mobis India Ltd.</h3>
+                    <div class="timeline-date">June 2025 · Kanchipuram, Tamil Nadu</div>
+                    <ul>
+                        <li>Acquired exposure to end-to-end manufacturing and industrial standards.</li>
+                        <li>Learned and applied relay logic concepts for automation and control systems.</li>
+                        <li>Gained experience in mechanical tool handling, cabling, and wiring.</li>
+                        <li>Assisted in module production and quality-focused assembly activities.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title reveal">My <span class="accent">Education</span></h2>
+            <p class="section-subtitle reveal">Academic background</p>
+
+            <div class="skills-grid">
+                <div class="card education-card reveal">
+                    <h3>🎓 B.E. Electrical and Electronics Engineering</h3>
+                    <div class="date">2023 – 2027</div>
+                    <p>Sri Sairam Engineering College</p>
+                    <p><strong class="accent">CGPA: 9.1 / 10</strong></p>
+                </div>
+
+                <div class="card education-card reveal">
+                    <h3>🏫 Senior Secondary (XII)</h3>
+                    <div class="date">2023</div>
+                    <p>SSKV Boys Matriculation Higher Secondary School</p>
+                    <p>Kanchipuram</p>
+                    <p><strong class="accent">88.67 / 100</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title reveal">Certifi<span class="accent">cations</span></h2>
+            <p class="section-subtitle reveal">Courses and knowledge development</p>
+
+            <div class="cert-grid">
+                <div class="card cert-item reveal">
+                    <div class="cert-icon">🏅</div>
+                    <div>
+                        <h3>NPTEL</h3>
+                        <p>Design Innovation and Technology</p>
+                    </div>
+                </div>
+
+                <div class="card cert-item reveal">
+                    <div class="cert-icon">🏅</div>
+                    <div>
+                        <h3>NPTEL</h3>
+                        <p>Introduction to Internet of Things — Top 5%</p>
+                    </div>
+                </div>
+
+                <div class="card cert-item reveal">
+                    <div class="cert-icon">🏅</div>
+                    <div>
+                        <h3>NPTEL</h3>
+                        <p>Computer Networks and Internet Protocols — Top 5%</p>
+                    </div>
+                </div>
+
+                <div class="card cert-item reveal">
+                    <div class="cert-icon">🏅</div>
+                    <div>
+                        <h3>Udemy</h3>
+                        <p>Python Course</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title reveal">Achievements & <span class="accent">Activities</span></h2>
+            <p class="section-subtitle reveal">Participation, leadership and extracurricular activities</p>
+
+            <div class="card achievement-list reveal">
+                <div class="achievement">
+                    <span class="achievement-icon">🏆</span>
+                    <p>Participated in technical symposiums and paper presentations across multiple engineering colleges.</p>
+                </div>
+
+                <div class="achievement">
+                    <span class="achievement-icon">📋</span>
+                    <p>Coordinated BIS Standards awareness events and ENSAV Club activities.</p>
+                </div>
+
+                <div class="achievement">
+                    <span class="achievement-icon">💡</span>
+                    <p>Actively participated in technical and innovation-based competitions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Let's <span class="accent">Connect</span></h2>
+            <p class="section-subtitle reveal">
+                Feel free to reach out for opportunities, collaboration or professional connections.
+            </p>
+
+            <div class="contact-grid">
+                <div class="card reveal">
+                    <h3 style="margin-bottom:15px;">Contact Information</h3>
+
+                    <a class="contact-link" href="mailto:saravanapalani04@gmail.com">
+                        <span>✉ Email</span>
+                        <strong>saravanapalani04@gmail.com</strong>
+                    </a>
+
+                    <a class="contact-link" href="tel:+917397029364">
+                        <span>📞 Phone</span>
+                        <strong>+91 73970 29364</strong>
+                    </a>
+
+                    <a class="contact-link" href="https://www.linkedin.com/in/saravanan04"
+                       target="_blank" rel="noopener noreferrer">
+                        <span>💼 LinkedIn</span>
+                        <strong>linkedin.com/in/saravanan04</strong>
+                    </a>
+                </div>
+
+                <div class="card reveal">
+                    <h3 style="margin-bottom:15px;">Career Objective</h3>
+                    <p>
+                        I am eager to learn, grow, and contribute my engineering
+                        knowledge to a professional environment. I am interested
+                        in opportunities related to electrical engineering,
+                        embedded technologies, IoT, industrial automation,
+                        and technology-driven roles.
+                    </p>
+
+                    <br>
+                    <a href="mailto:saravanapalani04@gmail.com?subject=Portfolio%20Contact"
+                       class="btn btn-primary">
+                       Send Me an Email ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <p>© <span id="year"></span> Saravanan P. All rights reserved.</p>
+            <p>Designed & Built with <span class="accent">♥</span></p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile navigation
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
+
+        // Light/Dark theme toggle
+        const themeBtn = document.getElementById("themeBtn");
+
+        themeBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+
+            if (document.body.classList.contains("light")) {
+                themeBtn.textContent = "☾";
+            } else {
+                themeBtn.textContent = "☀";
+            }
+        });
+
+        // Reveal animation when scrolling
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Dynamic copyright year
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
